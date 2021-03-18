@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/images/adidas_ico.png" type="image/x-icon">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/updatediet.css">
+</head>
+<body>
+    <header>
+        <section class="textos-header">
+            <h1> <span>Adidas</span> Running By Runtastic</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div> 
+    </header>
+    <div class="content">
+        <h1 class="title" >Edit <span>Form</span></h1>
+        <div class="form-wrapper">
+            <div class="form-form">
+                <h3>Diets</h3>
+                <form action="/update_record/{{ diet.0 }}" method="POST">
+                    <p>
+                        Select a food again (Required) <br>
+                        <select name="food-name" id="food-name">
+                            <option value="value1">Eggs</option>
+                            <option value="value2">Fruits</option>
+                            <option value="value3">Fish</option>
+                            <option value="value4">Chicken</option>
+                            <option value="value5">Yoghurt</option>
+                            <option value="value6">Salad</option>
+                            <option value="value7">Turkey toast</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="protein">Proteins (gr)</label>
+                        <input type="number" id="protein" name="protein" min="1" max="2000" value="{{ diet.2 }}">
+                    </p>
+                    <p>
+                        <label for="carbs">Carbohydrates (gr)</label>
+                        <input type="number" id="carbs" name="carbs" min="1" max="2500" value="{{ diet.3 }}">
+                    </p>
+                    <p>
+                        <label for="units">Units</label>
+                        <input type="text" id="units" name="units" min="1" max="100" value="{{ diet.4 }}">
+                    </p>
+                    <p>
+                        Select a drink again (Required)<br>
+                        <select name="drink-name" id="drink-name">
+                            <option value="value1">Water</option>
+                            <option value="value2">Fruit water</option>
+                            <option value="value3">Ginger beer</option>
+                            <option value="value4">Chia water</option>
+                            <option value="value5">Fruit juice</option>
+                            <option value="value6">Milk</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="quantity-drink">Amount of drink (glasses)</label>
+                        <input type="number" id="quantity-drink" name="quantity-drink" min="1" max="100" value="{{ diet.6 }}">
+                    </p>
+                    <p class="block">
+                        <button type="submit">
+                            Save Food
+                        </button>
+                    </p>
+                </form>
+            </div>
+            <div class="form-img">
+                <img src="/static/images/edit_form.jpg">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
